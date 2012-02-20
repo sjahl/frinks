@@ -7,19 +7,10 @@ require 'sinatra'
 require 'data_mapper'
 
 # Database
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/frinks.db")
-
-class Link
-  include DataMapper::Resource
-  property :id, Serial
-  property :name, String
-  property :url, Text
-  property :created_at, DateTime
-end
-
+#
 # Visible Routes
 get '/' do
-  "Hello World!"
+  "Hello World"
 end
 
 # API 
