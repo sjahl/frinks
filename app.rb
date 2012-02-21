@@ -28,7 +28,7 @@ get '/' do
   erb :index
 end
 
-get '/links/:id' do
+get '/link/:id' do
   @link = FrinkLink.get(params[:id])
   erb :link
 end
