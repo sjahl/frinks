@@ -1,4 +1,4 @@
 <% @links.each do |link| %>
     <h2><%= link.title %></h2>
-    <p><%= link.url %></p>
+    <a href="<%= link.url %>"><%= link.url %><a/>
 <% end %>
