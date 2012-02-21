@@ -20,7 +20,6 @@ class FrinkLink
 end
 
 DataMapper.finalize
-
 FrinkLink.auto_upgrade!
 
 # Visible Routes
@@ -34,17 +33,20 @@ get '/links/:id' do
   erb :link
 end
 
+get '/new' do
+  erb :add
+end
+
 # API 
 get '/api/time' do
   "#{Time.now}"
 end
 
-get '/api/add' do
+post '/api/add' do
   @link = FrinkLink.create(
-    :title => "Google",
-    :url => "http://google.com",
+    :title => params[:title],
+    :url => params[:url],
     :created_at => Time.now
   )
+  redirect '/'
 end
-
-
