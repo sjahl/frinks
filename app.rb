@@ -25,11 +25,26 @@ FrinkLink.auto_upgrade!
 
 # Visible Routes
 get '/' do
-  "Hello World"
+  @links = FrinkLink.all(:order => [ :id.desc ], :limit => 10)
+  erb :index
+end
+
+get '/links/:id' do
+  @link = FrinkLink.get(params[:id])
+  erb :link
 end
 
 # API 
 get '/api/time' do
   "#{Time.now}"
 end
+
+get '/api/add' do
+  @link = FrinkLink.create(
+    :title => "Google",
+    :url => "http://google.com",
+    :created_at => Time.now
+  )
+end
+
 
