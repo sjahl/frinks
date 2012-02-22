@@ -33,9 +33,15 @@ get '/link/:id' do
   erb :link
 end
 
+get '/link/:id/edit' do
+  @link = FrinkLink.get(params[:id])
+  erb :edit
+end
+
 get '/new' do
   erb :add
 end
+
 
 # API 
 get '/api/time' do
@@ -49,4 +55,14 @@ post '/api/add' do
     :created_at => Time.now
   )
   redirect '/'
+end
+
+put '/api/edit/:id' do
+  @link = FrinkLink.get(params[:id])
+  @link.update(
+    :title=> params[:title],
+    :url => params[:url],
+    :created_at => Time.now
+  )
+  redirect '/link/' + params[:id].to_s
 end
