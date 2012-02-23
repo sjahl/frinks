@@ -4,8 +4,11 @@
 # Description: a Sinatra app for storing links in a database
 
 require 'sinatra'
-require 'yaml'
 require 'data_mapper'
+
+use Rack::Auth::Basic do |username, password|
+    username == 'steve' && password == 'sekrets'
+end
 
 # Database
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/frinks.db")
