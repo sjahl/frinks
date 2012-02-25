@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# Filename: app.rb
-# Description: a Sinatra app for storing links in a database
 
 require 'sinatra'
 require 'data_mapper'
