@@ -1,6 +1,10 @@
 <form action="/api/edit/<%= @link.id %>" method="POST">
   <input name="_method" type="hidden" value="put" />
+  Title:
   <input type="text" name="title" id="title" value="<%= @link.title %>">
+  <br />
+  URL:
   <input type="text" name="url" id="url" value="<%= @link.url %>">
+  <br />
   <input id="task_submit" name="commit" type="submit" value="Update" />
 </form>

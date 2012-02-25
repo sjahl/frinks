@@ -1,5 +1,5 @@
-<h2><%= @link.title %><h2>
-<b>Are you sure you want to delete this link?</b>
+<h2><%= @link.title %></h2>
+<b>You are about to delete this link. That cool?</b>
 <form action="/api/delete/<%= @link.id %>" method="post">
 <input type="hidden" name="_method" value="delete" />
 <input type="submit" value="Delete">

@@ -1,3 +1,6 @@
+<a href="/new">Add Link</a>
+<br />
+<br />
 <% @links.each do |link| %>
   <a href="<%= link.url %>"><%= link.title %><a/><br />
       <a href="/link/<%= link.id %>">Info</a> | <a href="/link/<%= link.id %>/edit">Edit</a> | <a href="/link/<%= link.id %>/delete">Delete</a><br /><br />

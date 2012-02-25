@@ -5,13 +5,11 @@
 
 require 'sinatra'
 require 'data_mapper'
+require './config'
 
-use Rack::Auth::Basic do |username, password|
-    username == 'steve' && password == 'sekrets'
-end
 
 # Database
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/frinks.db")
+DataMapper::setup(:default, "sqlite3://#{DATABASE[:database_path]}")
 
 class FrinkLink
   include DataMapper::Resource
