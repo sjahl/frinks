@@ -70,7 +70,7 @@ end
 put '/api/edit/:id' do
   @link = FrinkLink.get(params[:id])
   @link.update(
-    :title=> params[:title],
+    :title => params[:title],
     :url => params[:url],
     :created_at => Time.now
   )
