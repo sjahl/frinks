@@ -29,6 +29,11 @@ get '/' do
   erb :index
 end
 
+get '/all' do
+  @links = FrinkLink.all(:order => [ :id.desc ])
+  erb :index
+end
+
 get '/link/:id' do
   @link = FrinkLink.get(params[:id])
   erb :link
