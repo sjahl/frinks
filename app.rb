@@ -61,7 +61,11 @@ post '/api/add' do
     :url => params[:url],
     :created_at => Time.now
   )
-  redirect '/'
+  if @link.save
+    redirect "/link/#{@link.id}"
+  else
+    redirect '/'
+  end
 end
 
 put '/api/edit/:id' do
