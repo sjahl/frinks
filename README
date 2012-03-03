@@ -4,4 +4,6 @@ I like Pinboard. I also like self-hosted solutions. Mainly a project to learn th
 
 install the sinatra and datamapper, sqlite3, and dm-sqlite-adapter gems, and run the app.rb
 
-More to come. Tagging maybe? Starring/Favoriting? Oh, and some CSS
+More to come. Tagging maybe? Starring/Favoriting?
+
+Moved to a twitter-bootstrap based solution (I'm too lazy to write styles)
