@@ -1,8 +1,28 @@
 <!DOCTYPE html> 
-<h2><%= @link.title %></h2>
-<b>You are about to delete this link. That cool?</b>
-<form action="/api/delete/<%= @link.id %>" method="post">
-<input type="hidden" name="_method" value="delete" />
-<input type="submit" value="Delete">
- or <a href="/">Cancel</a>
-</form>
+<html>
+  <head>
+   <link href="/css/bootstrap.css" rel="stylesheet">
+   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      <h2><%= @link.title %></h2>
+      <b>You are about to delete this link. That cool?</b>
+      <form action="/api/delete/<%= @link.id %>" method="post">
+      <input type="hidden" name="_method" value="delete" />
+      <button type="submit" class="btn">Delete</button>
+       or <a href="/">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

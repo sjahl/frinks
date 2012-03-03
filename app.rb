@@ -13,8 +13,9 @@ class FrinkLink
   property :id, Serial
   property :title, String
   property :url, String
+  property :description, Text
   property :created_at, DateTime
-  property :is_starred, Boolean
+  property :is_starred, Boolean, :default => false
 end
 
 DataMapper.finalize
@@ -59,6 +60,7 @@ post '/api/add' do
   @link = FrinkLink.create(
     :title => params[:title],
     :url => params[:url],
+    :description => params[:description],
     :created_at => Time.now
   )
   if @link.save
@@ -75,7 +77,11 @@ put '/api/edit/:id' do
     :url => params[:url],
     :created_at => Time.now
   )
-  redirect '/link/' + params[:id].to_s
+  if @link.save
+    redirect '/link/' + params[:id].to_s
+  else
+    redirect '/'
+  end
 end
 
 delete '/api/delete/:id' do
