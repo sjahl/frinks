@@ -1,8 +1,15 @@
-<form action="/api/add" method="POST">
-  <p>Title:</p>
-  <input type="text" name="title" id="title">
-  <p>URL:</p>
-  <input type="text" name="url" id="url">
-  <br/>
+<!DOCTYPE html> 
+<html>
+  <head>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="span4">
+<form class="well" action="/api/add" method="POST">
+  <input type="text" class="span3" placeholder="Title" name="title" id="title">
+  <input type="text" class="span3" placeholder="http://example.com" name="url" id="url">
   <input type="submit" value="Add Link!"/>
 </form>
+</div>
+</body
+</html>

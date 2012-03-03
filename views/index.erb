@@ -1,7 +1,33 @@
-<a href="/new">Add Link</a> | <a href="/all">All Links</a> | <a href="/">Home</a>
-<br />
-<br />
-<% @links.each do |link| %>
-  <a href="<%= link.url %>"><%= link.title %><a/><br />
-      <a href="/link/<%= link.id %>">Info</a> | <a href="/link/<%= link.id %>/edit">Edit</a> | <a href="/link/<%= link.id %>/delete">Delete</a><br /><br />
-<% end %>
+<!DOCTYPE html> 
+<html>
+  <head>
+   <link href="/css/bootstrap.css" rel="stylesheet">
+   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+  <div class="row">
+  <div class="span4">
+    <form class="well" action="/api/add" method="POST">
+      <input type="text" class="span2" placeholder="Title" name="title" id="title">
+      <input type="text" class="span2" placeholder="http://example.com" name="url" id="url">
+      <br />
+      <button type="submit" class="btn">Add Link!</button>
+    </form>
+  </div>
+  <div class="span8">
+    <% @links.each do |link| %>
+      <h4><a href="<%= link.url %>"><%= link.title %><a/></h4>
+          <a href="/link/<%= link.id %>">Info</a> | <a href="/link/<%= link.id %>/edit">Edit</a> | <a href="/link/<%= link.id %>/delete">Delete</a><br /><br />
+    <% end %>
+  </div>
+</div>
+</div>
+</body>
+</html>

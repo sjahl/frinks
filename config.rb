@@ -3,4 +3,4 @@
 # might have more to configure later.
 
 
-DATABASE = { database_path: "#{ENV['HOME']}/frinks.db" }
+DATABASE = { database_path: "#{ENV['HOME']}/Dropbox/frinks.db" }
