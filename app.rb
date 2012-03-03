@@ -52,9 +52,6 @@ get '/new' do
 end
 
 # API 
-get '/api/time' do
-  "#{Time.now}"
-end
 
 post '/api/add' do
   @link = FrinkLink.create(
@@ -75,6 +72,7 @@ put '/api/edit/:id' do
   @link.update(
     :title => params[:title],
     :url => params[:url],
+    :description => params[:description],
     :created_at => Time.now
   )
   if @link.save
