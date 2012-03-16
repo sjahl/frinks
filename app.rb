@@ -47,10 +47,6 @@ get '/link/:id/delete' do
   erb :delete
 end
 
-get '/new' do
-  erb :add
-end
-
 # API 
 
 post '/api/add' do
