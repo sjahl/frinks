@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'bundler/setup'
 require 'sinatra'
 require 'data_mapper'
 require './config'
