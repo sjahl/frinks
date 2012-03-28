@@ -12,7 +12,9 @@ Moved to a twitter-bootstrap based solution (I'm too lazy to write styles)
 Installation
 ============
 
-Updated to use bundler. First do a:
+Clone the repo, and cd into the resulting directory.
+
+Do a:
 
 `gem install bundler`
 
