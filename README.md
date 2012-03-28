@@ -13,10 +13,12 @@ Installation
 ============
 
 Updated to use bundler. First do a:
-    gem install bundler
+
+`gem install bundler`
 
 Then do a:
-    bundle install --path vendor/gems
+
+`bundle install --path vendor/gems`
 
 Then run it:
-    $ ruby app.rb
+`ruby app.rb`
